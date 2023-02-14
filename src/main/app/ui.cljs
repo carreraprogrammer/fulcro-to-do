@@ -20,6 +20,8 @@
     ((dom/h1 label)
      (dom/ul (map ui-todo todos)))))                        ; Create instances from the list of todos
 
+(def ui-list (comp/factory Todo-list))
+
 (defsc Root [this state]
   (let [todo-data {:todos {:list/label "FULCRO TODO" :list/todos
                            [{:todo/id 1 :todo/task "Do the dishes" :todo/done false}
