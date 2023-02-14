@@ -1,7 +1,9 @@
 (ns app.ui
   (:require
     [com.fulcrologic.fulcro.components :as comp :refer [defsc]]
-    [com.fulcrologic.fulcro.dom :as dom]))
+    [com.fulcrologic.fulcro.dom :as dom]
+    [app.application :as application]
+    ))
 
 (defsc Todo [this {:todo/keys [id task done]}]
   (dom/li
@@ -25,9 +27,8 @@
 
 (def ui-list (comp/factory TodoList))
 
-(defsc Root [this state]
-  (let [todo-data {:todos {:list/label "FULCRO TODO" :list/todos
-                           [{:todo/id 1 :todo/task "Do the dishes" :todo/done false}
-                            {:todo/id 2 :todo/task "Buy groceries" :todo/done false}
-                            {:todo/id 3 :todo/task "Take out the trash" :todo/done true}]}}]
-    (dom/div (ui-list (:todos todo-data)))))
+(defsc Root [this {:keys [todos]}]
+   {}
+    (dom/div (ui-list todos)))
+
+

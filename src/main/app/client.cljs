@@ -4,6 +4,7 @@
     [app.ui :as ui]
     [com.fulcrologic.fulcro.application :as app]
     [com.fulcrologic.fulcro.components :as comp :refer [defsc]]
+    [com.fulcrologic.fulcro.algorithms.merge :as merge]
     ))
 
 
@@ -21,3 +22,12 @@
   ;; As of Fulcro 3.3.0, this addition will help with stale queries when using dynamic routing:
   (comp/refresh-dynamic-queries! app)
   (js/console.log "Hot reload"))
+
+(comment
+  (reset! (::app/state-atom app) {:todos {:list/label "FULCRO TODO" :list/todos
+                                          [{:todo/id 1 :todo/task "Do the dishes" :todo/done false}
+                                           {:todo/id 2 :todo/task "Buy groceries" :todo/done false}
+                                           {:todo/id 3 :todo/task "Take out the trash" :todo/done true}]}})
+  (app/current-state app)
+  (app/schedule-render! app)
+  )
