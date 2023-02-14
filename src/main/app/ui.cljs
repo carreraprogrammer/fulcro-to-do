@@ -13,8 +13,13 @@
                (dom/span task)
                )))
 
+(defsc Todo-list [this {:list/keys [label todos]}]
+  (dom/div
+    ((dom/h1 label)
+     (dom/ul todos))))
+
 (defsc Root [this state]
-  (let [todo-data {:todos {:list/label "To-do List" :list/todos
+  (let [todo-data {:todos {:list/label "FULCRO TODO" :list/todos
                            [{:todo/id 1 :todo/task "Do the dishes" :todo/done false}
                             {:todo/id 2 :todo/task "Buy groceries" :todo/done false}
                             {:todo/id 3 :todo/task "Take out the trash" :todo/done true}]}}]
