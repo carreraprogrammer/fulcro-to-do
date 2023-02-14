@@ -13,6 +13,8 @@
                (dom/span task)
                )))
 
+(def ui-todo (comp/factory Todo {:keyfn :todo/id}))
+
 (defsc Todo-list [this {:list/keys [label todos]}]
   (dom/div
     ((dom/h1 label)
