@@ -15,8 +15,11 @@
 (def ui-todo (comp/factory Todo {:keyfn :todo/id}))
 
 (defsc TodoList [this {:list/keys [label todos]}]
-  (dom/div
+  (dom/form
     (dom/h1 label)
+    (dom/div
+      (dom/input {:type "text" :placeholder "Add a new task"})
+      (dom/input {:type "submit" :value "Add"}))
     (dom/ul (map ui-todo todos))))
 
 (def ui-list (comp/factory TodoList))
