@@ -19,8 +19,9 @@
     (dom/h1 label)
     (dom/div
       (dom/input {:type "text" :placeholder "Add a new task"})
-      (dom/input {:type "submit" :value "Add"}))
-    (dom/ul (map ui-todo todos))))
+      (dom/input {:type "submit" :value "Add" }))
+    (dom/ul (map ui-todo todos))
+    (dom/button "Clear Completed")))
 
 (def ui-list (comp/factory TodoList))
 
