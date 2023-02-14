@@ -3,6 +3,16 @@
   (:require
     [com.fulcrologic.fulcro.components :as comp :refer [defsc]]
     [com.fulcrologic.fulcro.dom :as dom]))
+
+(defsc Todo [this {:todo/keys [id task done]}]
+  (dom/label (
+               (dom/input {:type    "checkbox"
+                           :checked done
+                           :onClick (str "DONE TASK: " task)
+                           })
+               (dom/span task)
+               )))
+
 (defsc Root [this state]
   (let [todo-data {:todos {:list/label "To-do List" :list/todos
                            [{:todo/id 1 :todo/task "Do the dishes" :todo/done false}
