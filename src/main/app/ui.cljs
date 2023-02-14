@@ -13,12 +13,12 @@
                (dom/span task)
                )))
 
-(def ui-todo (comp/factory Todo {:keyfn :todo/id}))
+(def ui-todo (comp/factory Todo {:keyfn :todo/id}))         ;With this function I can create instances of the Todo component
 
 (defsc Todo-list [this {:list/keys [label todos]}]
   (dom/div
     ((dom/h1 label)
-     (dom/ul todos))))
+     (dom/ul (map ui-todo todos)))))                        ; Create instances from the list of todos
 
 (defsc Root [this state]
   (let [todo-data {:todos {:list/label "FULCRO TODO" :list/todos
