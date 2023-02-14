@@ -8,7 +8,7 @@
   (dom/label (
                (dom/input {:type    "checkbox"
                            :checked done
-                           :onClick (str "DONE TASK: " task)
+                           :onClick (fn [] println "DONE: " task)
                            })
                (dom/span task)
                )))
