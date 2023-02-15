@@ -24,3 +24,13 @@
   (js/console.log "Hot reload"))
 
 
+
+(comment
+  (reset! (::app/state-atom app) {:todos {:list/label "FULCRO TODO" :list/todos
+                                          [{:todo/id 1 :todo/task "Do the dishes" :todo/done false}
+                                           {:todo/id 2 :todo/task "Buy groceries" :todo/done false}
+                                           {:todo/id 3 :todo/task "Take out the trash" :todo/done true}]}})
+  (swap! (::app/state-atom app) assoc-in [:list/todos :todo/id 1 :todo/time] 20)
+  (app/current-state app)
+  (app/schedule-render! app)
+  )

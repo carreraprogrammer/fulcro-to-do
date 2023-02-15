@@ -18,21 +18,16 @@
 
 (def ui-todo (comp/factory Todo {:keyfn :todo/id}))
 
-(defsc TodoList [this]
+(defsc TodoList [this {:list/keys [label todos]}]
   {:query [:list/label :list/todos]
-   :ident :list/label
-   :initial-state (fn [_] {:todos {:list/label "FULCRO TODO" :list/todos
-                                   [{:todo/id 1 :todo/task "Do the dishes" :todo/done false}
-                                    {:todo/id 2 :todo/task "Buy groceries" :todo/done false}
-                                    {:todo/id 3 :todo/task "Take out the trash" :todo/done true}]}})}
+   :ident :list/label}
   (dom/form
-    (dom/h1 (:list/label (:todos this)))
+    (dom/h1 label)
     (dom/div
       (dom/input {:type "text" :placeholder "Add a new task"})
       (dom/input {:type "submit" :value "Add" }))
-    (dom/ul (map ui-todo (:list/todos (:todos this))))
+    (dom/ul (map ui-todo todos))
     (dom/button "Clear Completed")))
-
 
 (def ui-list (comp/factory TodoList))
 
