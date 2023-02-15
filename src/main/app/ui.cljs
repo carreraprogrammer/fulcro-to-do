@@ -7,7 +7,9 @@
 
 (defsc Todo [this {:todo/keys [id task done]}]
   {:query [:todo/id :todo/task :todo/done]
-   :ident :todo/id}
+   :ident :todo/id
+   :initial-state (fn [{:keys [id task done]}] {:todo/id (keyword id) :todo/task task :todo/done done})}
+
   (dom/li
    (dom/label
     (dom/input {:type    "checkbox"
@@ -20,7 +22,11 @@
 
 (defsc TodoList [this {:list/keys [label todos]}]
   {:query [:list/label :list/todos]
-   :ident :list/label}
+   :ident :list/label
+   :initial-state (fn [{:keys [label todos]}] {
+                                         :list/label label
+                                         :list/todos todos
+                                         })}
   (dom/form
     (dom/h1 label)
     (dom/div
@@ -32,7 +38,10 @@
 (def ui-list (comp/factory TodoList))
 
 (defsc Root [this {:keys [todos]}]
-   {}
+   {:initial-state (fn [_] {:todos (comp/get-initial-state TodoList {:label "FULCRO TODO"
+                                                                      :todos [(comp/get-initial-state Todo {:id 1 :task "Do the dishes" :done false})
+                                                                              (comp/get-initial-state Todo {:id 2 :task "Buy groceries" :done false})
+                                                                              (comp/get-initial-state Todo {:id 3 :task "Take out the trash" :done true})]})})}
     (dom/div (ui-list todos)))
 
 
