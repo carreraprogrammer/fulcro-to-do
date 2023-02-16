@@ -6,7 +6,7 @@
 
 (defsc Todo [this {:todo/keys [task-id task done] :as props} {:keys [onDelete]}]
   {:query [:todo/task-id :todo/task :todo/done]
-   :ident :todo/task-id
+   :ident (fn [] [:todo/task-id task-id])
    :initial-state (fn [{:keys [task-id task done]}] {:todo/task-id task-id :todo/task task :todo/done done})}
 
   (dom/li
@@ -22,7 +22,7 @@
 
 (defsc TodoList [this {:list/keys [label todos]}]
   {:query [:list/label {:list/todos (comp/get-query Todo)}]
-   :ident :list/label
+   :ident (fn [] [:list/label label])
    :initial-state (fn [{:keys [label todos]}] {
                                                :list/label label
                                                :list/todos todos})}
