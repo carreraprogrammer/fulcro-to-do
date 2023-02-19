@@ -1,42 +1,50 @@
+
 (ns app.ui
   (:require
     [app.mutations :as api]
     [com.fulcrologic.fulcro.components :as comp :refer [defsc]]
     [com.fulcrologic.fulcro.dom :as dom]))
 
-(defsc Todo [this {:keys [id text done]} {:keys [onDelete]}]
+(def ^:private id-counter (atom 0))
+
+(defsc Todo [this {:keys [id text done] :as props} {:keys [onDelete toggleDone]}]
   {:query         [:id :text :done]
-   :initial-state (fn [{:keys [id text done]}] {:todo/id id :todo/text text :todo/done done})}
+   :identity      :id
+   :initial-state (fn [params]
+                    (let [new-id (swap! id-counter inc)]
+                      {:id new-id :text (:text params) :done (:done params)}))}
   (dom/li
-    (dom/input {:type "checkbox" :checked done})
+    (dom/input {:type "checkbox" :checked done :onChange #(toggleDone id)})
     (dom/span text)
     (dom/button {:onClick #(onDelete id)} "X")))
-(def ui-todo (comp/factory Todo {:keyfn :id}))
 
+(def ui-todo (comp/factory Todo {:keyfn :id}))
 (defsc TodoList [this {:list/keys [id title todos] :as props}]
-  {:query [:list/id :list/title {:list/todos (comp/get-query Todo)}]
-   :ident (fn [] [:list/id (:list/id props)])
-   :initial-state (fn [{:keys [id title todos]}]
+  {:query  [:list/id :list/title {:list/todos (comp/get-query Todo)}]
+   :ident :list/id
+   :initial-state (fn [{:keys [id title]}]
                     {:list/id id
                      :list/title title
-                     :list/todos todos})}
-  (let [delete-todo (fn [todo-id] (comp/transact! this [(api/delete-todo {:list/id id :todo/id todo-id})]))]
+                     :list/todos [(comp/get-initial-state Todo {:text "Buy groceries" :done true})
+                                  (comp/get-initial-state Todo {:text "Walk the dog" :done true})
+                                  (comp/get-initial-state Todo {:text "Do laundry" :done false})
+                                  (comp/get-initial-state Todo {:text "Take a nap" :done true})
+                                  (comp/get-initial-state Todo {:text "Go to dance" :done false})
+                                  (comp/get-initial-state Todo {:text "Send email" :done true})
+                                  ]})}
+  (let [delete-todo (fn [todo-id] (comp/transact! this [(api/delete-todo {:list/id id :todo/id todo-id})]))
+        toggle-todo-done (fn [todo-id] (comp/transact! this [(api/toggle-todo-done {:list/id id :todo/id todo-id})]))]
     (dom/div
       (dom/h2 title)
       (dom/input {:type "text" :placeholder "Add a new task"})
       (dom/input {:type "submit" :value "Add"})
       (dom/ul
-        (map #(ui-todo (comp/computed % {:onDelete delete-todo})) todos)))))
+        (map #(ui-todo (comp/computed % {:onDelete delete-todo  :toggleDone toggle-todo-done})) todos)))))
 
-(def ui-todo-list (comp/factory TodoList))
+
+(def ui-todo-list (comp/factory TodoList {:key-fn :id}))
 
 (defsc Root [this {:keys [todos]}]
   {:query         [{:todos (comp/get-query TodoList)}]
-   :initial-state (fn [_] {:todos (comp/get-initial-state TodoList {:id :todos :title "FULCRO TODO" :todos [{:id 0 :text "Buy groceries" :done true}
-                                                                                                            {:id 1 :text "Walk the dog" :done true}
-                                                                                                            {:id 2 :text "Do laundry" :done false}
-                                                                                                            {:id 3 :text "Take a nap" :done true}
-                                                                                                            {:id 4 :text "Go to dance" :done false}
-                                                                                                            {:id 5 :text "Send email" :done true}
-                                                                                                            {:id 6 :text "Study code" :done true}]})})}
+   :initial-state (fn [_] {:todos (comp/get-initial-state TodoList {:id 0 :title "FULCRO TODO" :todos []})})}
   (ui-todo-list todos))

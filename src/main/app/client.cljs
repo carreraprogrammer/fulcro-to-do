@@ -22,3 +22,11 @@
   ;; As of Fulcro 3.3.0, this addition will help with stale queries when using dynamic routing:
   (comp/refresh-dynamic-queries! app)
   (js/console.log "Hot reload"))
+
+(comment
+  (reset! (::app/state-atom app) {})
+  (app/current-state app)
+  (merge/merge-component! app ui/Todo  {:id 4 :text"Please work" :done true})
+  (app/current-state app)
+  (app/schedule-render! app)
+  )
