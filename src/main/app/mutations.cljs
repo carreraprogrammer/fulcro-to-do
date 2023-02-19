@@ -23,4 +23,9 @@
                                       (merge todo {:done (not (:done todo))})
                                       todo))
                                   todos)))))
-
+(defmutation clear-done
+  "Mutation: Clear all the completed tasks from the list with `:list/id`"
+  [{list-id :list/id}]
+  (action [{:keys [state]}]
+          (swap! state update-in [:list/id list-id :list/todos]
+                 (fn [todos] (remove #(get % :done) todos)))))

@@ -33,18 +33,20 @@
                                   (comp/get-initial-state Todo {:text "Send email" :done true})
                                   ]})}
   (let [delete-todo (fn [todo-id] (comp/transact! this [(api/delete-todo {:list/id id :todo/id todo-id})]))
-        toggle-todo-done (fn [todo-id] (comp/transact! this [(api/toggle-todo-done {:list/id id :todo/id todo-id})]))]
+        toggle-todo-done (fn [todo-id] (comp/transact! this [(api/toggle-todo-done {:list/id id :todo/id todo-id})]))
+        clear-done (fn [] (comp/transact! this [(api/clear-done {:list/id id})]))]
     (dom/div
       (dom/h2 title)
-      (dom/input {:type "text" :placeholder "Add a new task"})
+      (dom/input {:type "text" :placeholder "Add a new task" :value ""})
       (dom/input {:type "submit" :value "Add"})
       (dom/ul
-        (map #(ui-todo (comp/computed % {:onDelete delete-todo  :toggleDone toggle-todo-done})) todos)))))
+        (map #(ui-todo (comp/computed % {:onDelete delete-todo  :toggleDone toggle-todo-done})) todos))
+      (dom/button {:onClick #(clear-done id)} "Clear completed"  ))))
 
 
 (def ui-todo-list (comp/factory TodoList {:key-fn :id}))
 
-(defsc Root [this {:keys [todos]}]
-  {:query         [{:todos (comp/get-query TodoList)}]
-   :initial-state (fn [_] {:todos (comp/get-initial-state TodoList {:id 0 :title "FULCRO TODO" :todos []})})}
-  (ui-todo-list todos))
+  (defsc Root [this {:keys [todos]}]
+    {:query         [{:todos (comp/get-query TodoList)}]
+     :initial-state (fn [_] {:todos (comp/get-initial-state TodoList {:id 0 :title "FULCRO TODO" :todos []})})}
+    (ui-todo-list todos))
