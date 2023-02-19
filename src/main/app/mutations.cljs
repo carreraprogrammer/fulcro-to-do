@@ -4,6 +4,7 @@
     [com.fulcrologic.fulcro.algorithms.merge :as merge]
     ))
 
+(def ^:private id-counter (atom -1))
 (defmutation delete-todo
   "Mutation: Delete the task with `:todo/id` from the list with `:list/id`"
   [{list-id :list/id
@@ -29,3 +30,11 @@
   (action [{:keys [state]}]
           (swap! state update-in [:list/id list-id :list/todos]
                  (fn [todos] (remove #(get % :done) todos)))))
+
+(defmutation add-todo
+  "Mutation: Add a new task with :todo/text to the list with :list/id"
+  [{list-id :list/id
+    todo-text :todo/text}]
+  (action [{:keys [state]}]
+          (swap! state update-in [:list/id list-id :list/todos]
+                 (fn [todos] (concat todos [{:id (swap! id-counter inc) :text todo-text :done false}])))))
