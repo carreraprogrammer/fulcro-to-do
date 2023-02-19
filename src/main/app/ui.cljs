@@ -34,7 +34,7 @@
                                   ]})}
   (let [delete-todo (fn [todo-id] (comp/transact! this [(api/delete-todo {:list/id id :todo/id todo-id})]))
         toggle-todo-done (fn [todo-id] (comp/transact! this [(api/toggle-todo-done {:list/id id :todo/id todo-id})]))
-        clear-done (fn [] (comp/transact! this [(api/clear-done {:list/id id})]))]
+        clear-done (fn [id] (comp/transact! this [(api/clear-done {:list/id id})]))]
     (dom/div
       (dom/h2 title)
       (dom/input {:type "text" :placeholder "Add a new task" :value ""})
