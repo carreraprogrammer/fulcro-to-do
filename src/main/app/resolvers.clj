@@ -1,0 +1,31 @@
+(ns app.resolvers
+  (:require
+    [com.wsscode.pathom.core :as p]
+    [com.wsscode.pathom.connect :as pc]))
+
+(def todos-table
+  {1 {:todo/id 1 :todo/text "Buy groceries" :todo/done true}
+   2 {:todo/id 2 :todo/text "Walk the dog" :todo/done true}
+   3 {:todo/id 3 :todo/text "Do laundry" :todo/done false}
+   4 {:todo/id 4 :todo/text "Take a nap" :todo/done true}
+   5 {:todo/id 5 :todo/text "Go to dance" :todo/done false}
+   6 {:todo/id 6 :todo/text "Send email" :todo/done true}})
+
+(def list-table
+  {:main-list {:list/id     0
+               :list/title  "Main List"
+               :list/todos  [1 2 3 4 5 6]}})
+
+(pc/defresolver todo-resolver [env {:todo/keys [id]}]
+                {::pc/input  #{:todo/id}
+                 ::pc/output [:todo/text :todo/done]}
+                (get todos-table id))
+
+(pc/defresolver todo-list-resolver [env {:list/keys [id]}]
+                {::pc/input  #{:list/id}
+                 ::pc/output [:list/title {:list/todos [:todo/id]}]}
+                (when-let [list (get list-table id)]
+                  (assoc list
+                    :list/todos (mapv (fn [id] {:todo/id id}) (:list/todos list)))))
+
+(def resolvers [todo-resolver todo-list-resolver])
