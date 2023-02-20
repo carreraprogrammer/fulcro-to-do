@@ -16,18 +16,13 @@
 (def ui-todo (comp/factory Todo {:keyfn :id}))
 (defsc TodoList [this {:list/keys [id title todos] :as props}]
   {:query [:list/id :list/title {:list/todos (comp/get-query Todo)}]
-   :ident (fn [] [:list/id (:list/id props)])
-   :initial-state (fn [{:keys [id title]}]
-                    {:list/id id
-                     :list/title title
-                     :list/todos [
-                                  ]})}
+   :ident (fn [] [:list/id (:list/id props)])}
   (let [delete-todo (fn [todo-id] (comp/transact! this [(api/delete-todo {:list/id id :todo/id todo-id})]))
         toggle-todo-done (fn [todo-id] (comp/transact! this [(api/toggle-todo-done {:list/id id :todo/id todo-id})]))
         clear-done (fn [id] (comp/transact! this [(api/clear-done {:list/id id})]))
         add-todo (fn [list-id text] (comp/transact! this [(api/add-todo {:list/id list-id :todo/text text})]))]
     (dom/div
-      (dom/h2 title)
+      (dom/h2 "FULCRO")
       (dom/form
         {:onSubmit (fn [e]
                      (do (.preventDefault e)
@@ -43,5 +38,5 @@
 
   (defsc Root [this {:keys [todos]}]
     {:query         [{:todos (comp/get-query TodoList)}]
-     :initial-state (fn [_] {:todos (comp/get-initial-state TodoList {:id 0 :title "FULCRO TODO" :todos []})})}
+     :initial-state  {}}
     (ui-todo-list todos))
