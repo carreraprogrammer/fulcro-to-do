@@ -7,8 +7,7 @@
 (def input-value (atom ""))
 
 (defsc Todo [this {:keys [id text done] :as props} {:keys [onDelete toggleDone]}]
-  {:query [:id :text :done]
-   :identity :id}
+  {:query [:id :text :done]}
   (dom/li
     (dom/input {:type "checkbox" :checked done :onChange #(toggleDone id)})
     (dom/span text)
@@ -17,7 +16,7 @@
 (def ui-todo (comp/factory Todo {:keyfn :id}))
 (defsc TodoList [this {:list/keys [id title todos] :as props}]
   {:query [:list/id :list/title {:list/todos (comp/get-query Todo)}]
-   :ident :list/id
+   :ident (fn [] [:list/id (:list/id props)])
    :initial-state (fn [{:keys [id title]}]
                     {:list/id id
                      :list/title title
