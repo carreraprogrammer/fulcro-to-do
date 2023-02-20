@@ -94,5 +94,6 @@
     <orderEntry type="library" name="Deps: org.clojure/core.cache:1.0.207" level="project" />
     <orderEntry type="library" name="Deps: org.clojure/core.async:1.4.627" level="project" />
     <orderEntry type="library" name="Deps: javax.xml.bind/jaxb-api:2.3.0" level="project" />
+    <orderEntry type="library" name="Deps: http-kit:2.5.3" level="project" />
   </component>
 </module>

@@ -3,6 +3,8 @@
            com.fulcrologic/fulcro {:mvn/version "3.5.9"}
            com.wsscode/pathom     {:mvn/version "2.2.15"}
            com.taoensso/timbre    {:mvn/version "4.10.0"}
+           ring/ring-core         {:mvn/version "1.9.4"}
+           http-kit/http-kit      {:mvn/version "2.5.3"}
            }
 
  :aliases {:dev {:extra-paths ["src/dev"]
