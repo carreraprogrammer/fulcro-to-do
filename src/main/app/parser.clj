@@ -1,5 +1,6 @@
 (ns app.parser
   (:require
+    [app.resolvers]
     [com.wsscode.pathom.core :as p]
     [com.wsscode.pathom.connect :as pc]
     [taoensso.timbre :as log]))
