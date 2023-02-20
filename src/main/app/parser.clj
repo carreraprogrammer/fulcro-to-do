@@ -4,7 +4,7 @@
     [com.wsscode.pathom.connect :as pc]
     [taoensso.timbre :as log]))
 
-(def resolvers [])
+(def resolvers [app.resolvers/resolvers])
 
 (def pathom-parser
   (p/parser {::p/env     {::p/reader                 [p/map-reader
