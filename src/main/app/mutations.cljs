@@ -24,7 +24,8 @@
                                     (if (= (:todo/id todo) todo-id)
                                       (merge todo {:todo/done (not (:todo/done todo))})
                                       todo))
-                                  todos)))))
+                                  todos))))
+  (remote [env] true))
 (defmutation clear-done
   "Mutation: Clear all the completed tasks from the list with `:list/id`"
   [{list-id :list/id}]
