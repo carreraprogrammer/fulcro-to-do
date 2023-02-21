@@ -4,8 +4,6 @@
     [com.wsscode.pathom.connect :as pc]
     [taoensso.timbre :as log]))
 
-(def ^:private id-counter (atom -1))
-
 (pc/defmutation delete-todo [env {list-id :list/id
                                   todo-id :todo/id}]
                 {::pc/sym `delete-todo}
@@ -37,10 +35,11 @@
                   (swap! list-table update-in [list-id :list/todos] remove-done)
                   true))
 
-(pc/defmutation add-todo [env {list-id   :list/id
+(pc/defmutation add-todo [env {list-id :list/id
                                todo-text :todo/text}]
                 {::pc/sym `add-todo}
-                (let [id (swap! id-counter inc)
+                (let [todos (get-in @list-table [list-id :list/todos])
+                      id (count todos)
                       todo {:todo/id id :todo/text todo-text :todo/done false}]
                   (swap! list-table update-in [list-id :list/todos] conj todo)
                   {:todo/id id :todo/text todo-text :todo/done false}))
