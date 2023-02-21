@@ -9,7 +9,7 @@
 
 (def list-table
   (atom {:todos {:list/id     :todos
-               :list/title  "Main List"
+               :list/title  "My Fulcro Todo"
                :list/todos  []}}))
 
 (pc/defresolver todo-resolver [env {:todo/keys [id]}]

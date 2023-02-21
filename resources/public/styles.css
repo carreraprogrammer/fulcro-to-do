@@ -1,0 +1,244 @@
+/* MOBILE FIRST */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+#app {
+  border: 1px solid red;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todos-container {
+  border: 1px solid blue;
+  height: auto;
+  min-height: 40%;
+  width: 80%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.todos-title {
+  font-size: 7rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+}
+
+.input-form {
+  width: 80%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  font-size: 1.5rem;
+  height: 60px;
+  width: 80%;
+  padding-left: 5px;
+}
+
+.add-btn {
+  font-size: 1.5rem;
+  height: 60px;
+  margin-left: 2%;
+  cursor: pointer;
+  width: 150px;
+  border: 1.5px solid black;
+  background: transparent;
+
+}
+
+.add-btn:hover {
+  background: rgba(255, 255, 0, 0.311);
+  border: 2px solid black;
+  font-weight: bold;
+}
+
+.add-btn:active {
+  background: yellow;
+  border: 2px solid black;
+  font-weight: bold;
+}
+
+
+table {
+  width: 80%;
+  font-size: 1.5rem;
+  border: 1px solid gray;
+  margin-top: 2%;
+}
+
+th {
+  font-size: 1.5rem;
+  background-color: rgba(128, 128, 128, 0.252);
+  height: 3rem;
+}
+
+td {
+ border: 1px solid gray;
+ height: 2.5rem;
+}
+
+.th-todo {
+  width: 70%;
+}
+
+.th-id {
+  width: 10%;
+}
+
+.th-menu {
+  width: 20%;
+}
+
+.td-todo {
+  width: 80%;
+  text-align: left;
+  padding-left: 2%;
+}
+
+.td-menu {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.td-id {
+  width: 10%;
+  text-align: center;
+}
+
+.x-btn {
+  width: 40%;
+  height: 80%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid black;
+}
+
+.x-btn > div {
+  width: 80%;
+  margin: 3px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.x-btn :nth-child(1) {
+  border: 0.5px solid red;
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.x-btn :nth-child(2) {
+  border: 0.5px solid red;
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+.clear-btn {
+  font-size: 2rem;
+  height: 70px;
+  margin-left: 2%;
+  cursor: pointer;
+  width: 300px;
+  margin-top: 5%;
+  border: 1.5px solid black;
+  background: transparent;
+}
+
+.clear-btn:hover {
+  color: red;
+  font-weight: bold;
+}
+
+/* Desktop version */
+
+
+@media screen and (min-width: 1000px) {
+
+  html {
+    font-size: 12px;
+  }
+
+  .input {
+    height: 40px;
+  }
+
+  .add-btn {
+    height: 40px;
+    margin-left: 2%;
+  }
+
+  .clear-btn {
+    height: 50px;
+  }
+
+  .todos-container {
+    border: 2px solid yellow;
+    height: 80%;
+    width: 60%;
+  }
+
+  .x-btn > div {
+    border: 0.5px solid black;
+    width: 40%;
+    margin: 2px;
+  }
+
+  .x-btn :nth-child(1) {
+    border: 0.5px solid black;
+    transform: translateY(0) rotate(0);
+  }
+  
+  .x-btn :nth-child(2) {
+    border: 0.5px solid black;
+    transform: translateY(0) rotate(0);
+  }
+
+  .x-btn:hover {
+    border: none;
+  }
+  
+  .x-btn:hover :nth-child(1) {
+    border: 0.5px solid red;
+    transform: translateY(3px) rotate(45deg);
+  }
+  
+  .x-btn:hover :nth-child(2) {
+    border: 0.5px solid red;
+    transform: translateY(-3px) rotate(-45deg);
+  }
+}
