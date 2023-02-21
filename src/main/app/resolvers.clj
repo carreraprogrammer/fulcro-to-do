@@ -23,7 +23,7 @@
                  ::pc/output [:list/title {:list/todos [:todo/id]}]}
                 (when-let [list (get @list-table id)]
                   (assoc list
-                    :list/todos (mapv (fn [id]
+                    :list/todos (map (fn [id]
                                         (if (number? id)
                                           {:todo/id id}
                                           id))
