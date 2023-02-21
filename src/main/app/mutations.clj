@@ -10,7 +10,11 @@
                                   todo-id :todo/id}]
                 {::pc/sym `delete-todo}
                 (letfn [(remove-todo [todos]
-                          (remove #(= (:todo/id %) todo-id) todos))]
+                          (let [new-todos (remove #(= (:todo/id %) todo-id) todos)]
+                            (map-indexed
+                              (fn [idx todo]
+                                (assoc todo :todo/id idx))
+                              new-todos)))]
                   (swap! list-table update-in [list-id :list/todos] remove-todo)
                   {:deleted-todo-id todo-id}))
 

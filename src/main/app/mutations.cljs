@@ -6,12 +6,16 @@
 
 (def ^:private id-counter (atom -1))
 (defmutation delete-todo
-  "Mutation: Delete the task with `:todo/id` from the list with `:list/id`"
+  "Mutation: Delete the task with :todo/id from the list with :list/id and update the :todo/id of the remaining tasks"
   [{list-id :list/id
     todo-id :todo/id}]
   (action [{:keys [state]}]
           (swap! state update-in [:list/id list-id :list/todos]
-                 (fn [todos] (remove #(= (:todo/id %) todo-id) todos))))
+                 (fn [todos]
+                   (let [new-todos (remove #(= (:todo/id %) todo-id) todos)]
+                     (map-indexed (fn [idx todo]
+                                    (assoc todo :todo/id idx))
+                                  new-todos)))))
   (remote [env] true))
 
 (defmutation toggle-todo-done
