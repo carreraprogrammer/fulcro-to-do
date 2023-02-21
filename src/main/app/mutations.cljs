@@ -11,7 +11,7 @@
     todo-id :todo/id}]
   (action [{:keys [state]}]
           (swap! state update-in [:list/id list-id :list/todos]
-                 (fn [todos] (remove #(= (:id %) todo-id) todos)))))
+                 (fn [todos] (remove #(= (:todo/id %) todo-id) todos)))))
 
 (defmutation toggle-todo-done
   "Mutation: Toggle the `done` state of the task with `:todo/id` in the list with `:list/id`"
@@ -20,8 +20,8 @@
   (action [{:keys [state]}]
           (swap! state update-in [:list/id list-id :list/todos]
                  (fn [todos] (map (fn [todo]
-                                    (if (= (:id todo) todo-id)
-                                      (merge todo {:done (not (:done todo))})
+                                    (if (= (:todo/id todo) todo-id)
+                                      (merge todo {:todo/done (not (:todo/done todo))})
                                       todo))
                                   todos)))))
 (defmutation clear-done
@@ -29,7 +29,7 @@
   [{list-id :list/id}]
   (action [{:keys [state]}]
           (swap! state update-in [:list/id list-id :list/todos]
-                 (fn [todos] (remove #(get % :done) todos)))))
+                 (fn [todos] (remove #(get % :todo/done) todos)))))
 
 (defmutation add-todo
   "Mutation: Add a new task with :todo/text to the list with :list/id"
@@ -37,4 +37,4 @@
     todo-text :todo/text}]
   (action [{:keys [state]}]
           (swap! state update-in [:list/id list-id :list/todos]
-                 (fn [todos] (concat todos [{:id (swap! id-counter inc) :text todo-text :done false}])))))
+                 (fn [todos] (concat todos [{:todo/id (swap! id-counter inc) :todo/text todo-text :todo/done false}])))))
