@@ -31,7 +31,12 @@
 (pc/defmutation clear-done [env {list-id :list/id}]
                 {::pc/sym `clear-done}
                 (letfn [(remove-done [todos]
-                          (remove #(get % :todo/done) todos))]
+                          (let [new-todos (remove #(get % :todo/done) todos)]
+                            (map-indexed
+                              (fn [idx todo]
+                                (assoc todo :todo/id idx))
+                              new-todos)))
+                        ]
                   (swap! list-table update-in [list-id :list/todos] remove-done)
                   true))
 

@@ -30,11 +30,15 @@
                                   todos))))
   (remote [env] true))
 (defmutation clear-done
-  "Mutation: Clear all the completed tasks from the list with `:list/id`"
+  "Mutation: Clear all the completed tasks from the list with :list/id and update the :todo/id of the remaining tasks"
   [{list-id :list/id}]
   (action [{:keys [state]}]
           (swap! state update-in [:list/id list-id :list/todos]
-                 (fn [todos] (remove #(get % :todo/done) todos))))
+                 (fn [todos]
+                   (let [new-todos (remove #(get % :todo/done) todos)]
+                     (map-indexed (fn [idx todo]
+                                    (assoc todo :todo/id idx))
+                                  new-todos)))))
   (remote [env] true))
 
 (defmutation add-todo
