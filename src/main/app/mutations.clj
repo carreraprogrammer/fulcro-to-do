@@ -4,7 +4,7 @@
     [com.wsscode.pathom.connect :as pc]
     [taoensso.timbre :as log]))
 
-(def ^:private id-counter (atom 6))
+(def ^:private id-counter (atom -1))
 
 (pc/defmutation delete-todo [env {list-id :list/id
                                   todo-id :todo/id}]

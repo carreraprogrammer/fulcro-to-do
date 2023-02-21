@@ -34,6 +34,7 @@
     <orderEntry type="library" name="Deps: expound:0.8.9" level="project" />
     <orderEntry type="library" name="Deps: org.clojure/spec.alpha:0.2.194" level="project" />
     <orderEntry type="library" name="Deps: org.clojure/tools.cli:1.0.206" level="project" />
+    <orderEntry type="library" name="Deps: danlentz/clj-uuid:0.1.9" level="project" />
     <orderEntry type="library" name="Deps: commons-fileupload:1.4" level="project" />
     <orderEntry type="library" name="Deps: com.taoensso/encore:3.10.1" level="project" />
     <orderEntry type="library" name="Deps: org.graalvm.regex/regex:21.1.0" level="project" />
@@ -55,6 +56,7 @@
     <orderEntry type="library" name="Deps: com.fasterxml.jackson.core/jackson-core:2.8.7" level="project" />
     <orderEntry type="library" name="Deps: org.ow2.asm/asm:5.2" level="project" />
     <orderEntry type="library" name="Deps: thheller/shadow-util:0.7.0" level="project" />
+    <orderEntry type="library" name="Deps: primitive-math:0.1.6" level="project" />
     <orderEntry type="library" name="Deps: com.cognitect/transit-js:0.8.874" level="project" />
     <orderEntry type="library" name="Deps: io.methvin/directory-watcher:0.15.0" level="project" />
     <orderEntry type="library" name="Deps: com.taoensso/truss:1.6.0" level="project" />

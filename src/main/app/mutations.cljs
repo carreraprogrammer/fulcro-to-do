@@ -4,7 +4,7 @@
     [com.fulcrologic.fulcro.algorithms.merge :as merge]
     ))
 
-(def ^:private id-counter (atom 6))
+(def ^:private id-counter (atom -1))
 (defmutation delete-todo
   "Mutation: Delete the task with `:todo/id` from the list with `:list/id`"
   [{list-id :list/id
