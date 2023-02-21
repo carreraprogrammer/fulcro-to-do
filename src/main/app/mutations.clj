@@ -12,6 +12,6 @@
                 (let [id (swap! id-counter inc)
                       todo {:todo/id id :todo/text todo-text :todo/done false}]
                   (swap! list-table update-in [list-id :list/todos] conj todo)
-                  {:todo todo}))
+                  {:todo/id id :todo/text todo-text :todo/done false}))
 
 (def mutations [add-todo])

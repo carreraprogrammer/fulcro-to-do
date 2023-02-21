@@ -13,7 +13,7 @@
     (dom/span text)
     (dom/button {:onClick #(onDelete id)} "X")))
 
-(def ui-todo (comp/factory Todo {:keyfn :id}))
+(def ui-todo (comp/factory Todo))
 (defsc TodoList [this {:list/keys [id title todos] :as props}]
   {:query [:list/id :list/title {:list/todos (comp/get-query Todo)}]
    :ident (fn [] [:list/id (:list/id props)])}

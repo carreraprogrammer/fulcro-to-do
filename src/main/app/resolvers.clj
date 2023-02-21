@@ -20,14 +20,19 @@
 (pc/defresolver todo-resolver [env {:todo/keys [id]}]
                 {::pc/input  #{:todo/id}
                  ::pc/output [:todo/text :todo/done]}
-                (get todos-table id))
+                (let [todos @todos-table]
+                  (get todos id)))
 
 (pc/defresolver todo-list-resolver [env {:list/keys [id]}]
                 {::pc/input  #{:list/id}
                  ::pc/output [:list/title {:list/todos [:todo/id]}]}
-                (when-let [list (get list-table id)]
+                (when-let [list (get @list-table id)]
                   (assoc list
-                    :list/todos (mapv (fn [id] {:todo/id id}) (:list/todos list)))))
+                    :list/todos (mapv (fn [id]
+                                        (if (number? id)
+                                          {:todo/id id}
+                                          id))
+                                      (:list/todos list)))))
 
 (pc/defresolver main-list-resolver [env input]
                 {::pc/output [{:todos [:list/id]}]}

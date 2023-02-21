@@ -12,7 +12,8 @@
 (defn ^:export init []
   (app/mount! app ui/Root "app")
   (df/load! app :todos ui/TodoList)
-  (js/console.log "Loaded"))
+  (js/console.log "Loaded")
+  )
 
 (defn ^:export refresh
   "During development, shadow-cljs will call this on every hot reload of source. See shadow-cljs.edn"
