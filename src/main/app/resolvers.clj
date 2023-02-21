@@ -12,7 +12,7 @@
    6 {:todo/id 6 :todo/text "Send email" :todo/done true}})
 
 (def list-table
-  {:main-list {:list/id     0
+  {:todos {:list/id     :todos
                :list/title  "Main List"
                :list/todos  [1 2 3 4 5 6]}})
 
@@ -28,4 +28,8 @@
                   (assoc list
                     :list/todos (mapv (fn [id] {:todo/id id}) (:list/todos list)))))
 
-(def resolvers [todo-resolver todo-list-resolver])
+(pc/defresolver main-list-resolver [env input]
+                {::pc/output [{:todos [:list/id]}]}
+                {:todos {:list/id :todos}})
+
+(def resolvers [todo-resolver todo-list-resolver main-list-resolver])

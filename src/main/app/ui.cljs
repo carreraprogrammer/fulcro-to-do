@@ -6,8 +6,8 @@
     [com.fulcrologic.fulcro.dom :as dom]))
 (def input-value (atom ""))
 
-(defsc Todo [this {:keys [id text done] :as props} {:keys [onDelete toggleDone]}]
-  {:query [:id :text :done]}
+(defsc Todo [this {:todo/keys [id text done] :as props} {:keys [onDelete toggleDone]}]
+  {:query [:todo/id :todo/text :todo/done]}
   (dom/li
     (dom/input {:type "checkbox" :checked done :onChange #(toggleDone id)})
     (dom/span text)
@@ -39,4 +39,4 @@
   (defsc Root [this {:keys [todos]}]
     {:query         [{:todos (comp/get-query TodoList)}]
      :initial-state  {}}
-    (ui-todo-list todos))
+    (when todos (ui-todo-list todos)))

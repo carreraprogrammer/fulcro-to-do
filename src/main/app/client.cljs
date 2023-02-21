@@ -4,14 +4,14 @@
     [app.ui :as ui]
     [com.fulcrologic.fulcro.application :as app]
     [com.fulcrologic.fulcro.components :as comp :refer [defsc]]
+    [com.fulcrologic.fulcro.data-fetch :as df]
     [com.fulcrologic.fulcro.algorithms.merge :as merge]
     ))
 
 
-(defn ^:export init
-  "Shadow-cljs sets this up to be our entry-point function. See shadow-cljs.edn `:init-fn` in the modules of the main build."
-  []
+(defn ^:export init []
   (app/mount! app ui/Root "app")
+  (df/load! app :todos ui/TodoList)
   (js/console.log "Loaded"))
 
 (defn ^:export refresh
