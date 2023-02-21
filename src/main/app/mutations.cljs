@@ -31,7 +31,8 @@
   [{list-id :list/id}]
   (action [{:keys [state]}]
           (swap! state update-in [:list/id list-id :list/todos]
-                 (fn [todos] (remove #(get % :todo/done) todos)))))
+                 (fn [todos] (remove #(get % :todo/done) todos))))
+  (remote [env] true))
 
 (defmutation add-todo
   "Mutation: Add a new task with :todo/text to the list with :list/id"

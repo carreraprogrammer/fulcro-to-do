@@ -26,6 +26,13 @@
                   (swap! list-table update-in [list-id :list/todos] toggle-done)
                   {:toggled-todo-id todo-id}))
 
+(pc/defmutation clear-done [env {list-id :list/id}]
+                {::pc/sym `clear-done}
+                (letfn [(remove-done [todos]
+                          (remove #(get % :todo/done) todos))]
+                  (swap! list-table update-in [list-id :list/todos] remove-done)
+                  true))
+
 (pc/defmutation add-todo [env {list-id   :list/id
                                todo-text :todo/text}]
                 {::pc/sym `add-todo}
@@ -36,4 +43,4 @@
 
 
 
-(def mutations [add-todo delete-todo toggle-todo-done])
+(def mutations [add-todo delete-todo toggle-todo-done clear-done])
