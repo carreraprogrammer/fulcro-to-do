@@ -11,7 +11,8 @@
     todo-id :todo/id}]
   (action [{:keys [state]}]
           (swap! state update-in [:list/id list-id :list/todos]
-                 (fn [todos] (remove #(= (:todo/id %) todo-id) todos)))))
+                 (fn [todos] (remove #(= (:todo/id %) todo-id) todos))))
+  (remote [env] true))
 
 (defmutation toggle-todo-done
   "Mutation: Toggle the `done` state of the task with `:todo/id` in the list with `:list/id`"
