@@ -33,7 +33,7 @@ body {
 }
 
 .todos-container {
-  border: 1px solid blue;
+  border: 2px solid yellow;
   height: auto;
   min-height: 40%;
   width: 80%;
@@ -149,7 +149,20 @@ td {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  border: 1px solid black;
+}
+
+.menu {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.edit-btn {
+  display: none;
 }
 
 .x-btn > div {
@@ -218,6 +231,10 @@ td {
     margin: 2px;
   }
 
+  .x-btn:hover {
+    transform: scale(1.4)
+  }
+
   .x-btn :nth-child(1) {
     border: 0.5px solid black;
     transform: translateY(0) rotate(0);
@@ -228,17 +245,34 @@ td {
     transform: translateY(0) rotate(0);
   }
 
-  .x-btn:hover {
+  .menu:hover > .x-btn {
     border: none;
   }
   
-  .x-btn:hover :nth-child(1) {
+  .menu:hover > .x-btn > .x-one {
     border: 0.5px solid red;
     transform: translateY(3px) rotate(45deg);
   }
   
-  .x-btn:hover :nth-child(2) {
+  .menu:hover > .x-btn > .x-two {
     border: 0.5px solid red;
     transform: translateY(-3px) rotate(-45deg);
   }
+
+  .menu:hover > .edit-btn {
+    display: flex;
+    width: 40%;
+    height: 80%;
+    border: none;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .edit-btn:hover {
+    transform: scale(1.3);
+    color: orange;
+  }
+  
 }

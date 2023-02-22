@@ -14,7 +14,7 @@
       (dom/input {:type "checkbox" :checked done :onChange #(toggleDone id)})
       (str "  " text)
      )
-    (dom/td :.td-menu (dom/button :.x-btn {:onClick #(onDelete id)} (dom/div :.x-one) (dom/div :.x-two)))))
+    (dom/td :.td-menu (dom/div :.menu (dom/button :.edit-btn "E") (dom/button :.x-btn {:onClick #(onDelete id)} (dom/div :.x-one) (dom/div :.x-two)) ))))
 
 (def ui-todo (comp/factory Todo {:keyfn :todo/id}))
 
