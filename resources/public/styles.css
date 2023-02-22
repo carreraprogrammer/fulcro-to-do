@@ -247,6 +247,7 @@ td {
 
   .menu:hover > .x-btn {
     border: none;
+    transition: all 0.3s ease-in-out;
   }
   
   .menu:hover > .x-btn > .x-one {
@@ -268,6 +269,7 @@ td {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
   }
 
   .edit-btn:hover {
