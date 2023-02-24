@@ -1,5 +1,4 @@
 {:paths   [ "db"]
  :deps    {org.clojure/clojure    {:mvn/version "1.10.3"}
            com.datomic/dev-local {:mvn/version "1.0.243"}
-           com.datomic/client-cloud {:mvn/version "1.0.122"}
            }}
