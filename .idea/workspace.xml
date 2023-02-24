@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="55c8a6af-78cb-45c6-8a08-69cd50a13fcd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/ClojureProjectResolveSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/clojure-deps.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deps.edn" beforeDir="false" afterPath="$PROJECT_DIR$/deps.edn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fulcro-to-do.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fulcro-to-do.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/public/js/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/public/js/main/main.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DepsLocalSettings">
+    <option name="repoId" value="" />
+    <option name="repoUrl" value="" />
+  </component>
+  <component name="DepsProjectDetails">
+    <option name="cachedModuleDetails">
+      <map>
+        <entry key="$PROJECT_DIR$/deps.edn">
+          <value>
+            <ModuleDetails>
+              <option name="details" value="{:paths [&quot;/home/asus/carreraprogrammer/DATAICO/fulcro-to-do/src/main&quot; &quot;/home/asus/carreraprogrammer/DATAICO/fulcro-to-do/resources&quot;], :deps {org.clojure/clojure {:mvn/version &quot;1.10.3&quot;}, com.fulcrologic/fulcro {:mvn/version &quot;3.5.9&quot;}, com.wsscode/pathom {:mvn/version &quot;2.2.15&quot;}, com.taoensso/timbre {:mvn/version &quot;4.10.0&quot;}, ring/ring-core {:mvn/version &quot;1.9.4&quot;}, http-kit/http-kit {:mvn/version &quot;2.5.3&quot;}, org.clojure/tools.namespace {:mvn/version &quot;1.4.1&quot;}}, :aliases {:deps {:replace-paths [], :replace-deps {org.clojure/tools.deps.alpha {:mvn/version &quot;0.15.1254&quot;}, org.slf4j/slf4j-nop {:mvn/version &quot;1.7.25&quot;}}, :ns-default clojure.tools.cli.api, :ns-aliases {help clojure.tools.cli.help}}, :test {:extra-paths [&quot;/home/asus/carreraprogrammer/DATAICO/fulcro-to-do/test&quot;]}, :dev {:extra-paths [&quot;/home/asus/carreraprogrammer/DATAICO/fulcro-to-do/src/dev&quot;], :extra-deps {org.clojure/clojurescript {:mvn/version &quot;1.10.914&quot;}, thheller/shadow-cljs {:mvn/version &quot;2.16.9&quot;}, binaryage/devtools {:mvn/version &quot;1.0.4&quot;}, cider/cider-nrepl {:mvn/version &quot;0.27.4&quot;}, org.clojure/tools.namespace {:mvn/version &quot;1.4.1&quot;}}}}, :mvn/repos {&quot;central&quot; {:url &quot;https://repo1.maven.org/maven2/&quot;}, &quot;clojars&quot; {:url &quot;https://repo.clojars.org/&quot;}}, :system-aliases #{:test :deps}, :deps-tree {com.cognitect/transit-java {:mvn/version &quot;1.0.343&quot;, :deps/manifest :mvn, :dependents [com.cognitect/transit-clj], :paths [&quot;/home/asus/.m2/repository/com/cognitect/transit-java/1.0.343/transit-java-1.0.343.jar&quot;], :children (com.fasterxml.jackson.core/jackson-core org.msgpack/msgpack javax.xml.bind/jaxb-api)}, org.clojure/data.json {:mvn/version &quot;0.2.6&quot;, :deps/manifest :mvn, :dependents [org.clojure/clojurescript com.wsscode/pathom], :paths [&quot;/home/asus/.m2/repository/org/clojure/data.json/0.2.6/data.json-0.2.6.jar&quot;], :children ()}, org.clojure/clojure {:mvn/version &quot;1.10.3&quot;, :deps/manifest :mvn, :paths [&quot;/home/asus/.m2/repository/org/clojure/clojure/1.10.3/clojure-1.10.3.jar&quot;], :dependents [], :children (org.clojure/core.specs.alpha org.clojure/spec.alpha)}, com.wsscode/pathom {:mvn/version &quot;2.2.15&quot;, :deps/manifest :mvn, :paths [&quot;/home/asus/.m2/repository/com/wsscode/pathom/2.2.15/pathom-2.2.15.jar&quot;], :dependents [], :children (org.clojure/data.json spec-coerce/spec-coerce com.wsscode/spec-inspec camel-snake-kebab/camel-snake-kebab)}, commons-codec/commons-codec {:mvn/version &quot;1.15&quot;, :deps/manifest :mvn, :dependents [crypto-random/crypto-random ring/ring-codec], :paths [&quot;/home/asus/.m2/repository/commons-codec/commons-codec/1.15/commons-codec-1.15.jar&quot;], :children ()}, org.clojure/tools.analyzer {:mvn/version &quot;1.0.0&quot;, :deps/manifest :mvn, :dependents [org.clojure/tools.analyzer.jvm], :paths [&quot;/home/asus/.m2/repository/org/clojure/tools.analyzer/1.0.0/tools.analyzer-1.0.0.jar&quot;], :children ()}, com.fulcrologic/guardrails {:mvn/version &quot;1.1.4&quot;, :deps/manifest :mvn, :dependents [com.fulcrologic/fulcro], :paths [&quot;/home/asus/.m2/repository/com/fulcrologic/guardrails/1.1.4/guardrails-1.1.4.jar&quot;], :children (expound/expound)}, org.clojure/core.specs.alpha {:mvn/version &quot;0.2.56&quot;, :deps/manifest :mvn, :dependents [org.clojure/clojure], :paths [&quot;/home/asus/.m2/repository/org/clojure/core.specs.alpha/0.2.56/core.specs.alpha-0.2.56.jar&quot;], :children ()}, edn-query-language/eql {:mvn/version &quot;1.0.1&quot;, :deps/manifest :mvn, :dependents [com.fulcrologic/fulcro], :paths [&quot;/home/asus/.m2/repository/edn-query-language/eql/1.0.1/eql-1.0.1.jar&quot;], :children (org.clojure/test.check)}, expound/expound {:mvn/version &quot;0.8.5&quot;, :deps/manifest :mvn, :dependents [com.fulcrologic/guardrails], :paths [&quot;/home/asus/.m2/repository/expound/expound/0.8.5/expound-0.8.5.jar&quot;], :children ()}, org.clojure/spec.alpha {:mvn/version &quot;0.2.194&quot;, :deps/manifest :mvn, :dependents [org.clojure/clojure], :paths [&quot;/home/asus/.m2/repository/org/clojure/spec.alpha/0.2.194/spec.alpha-0.2.194.jar&quot;], :children ()}, commons-fileupload/commons-fileupload {:mvn/version &quot;1.4&quot;, :deps/manifest :mvn, :dependents [ring/ring-core], :paths [&quot;/home/asus/.m2/repository/commons-fileupload/commons-fileupload/1.4/commons-fileupload-1.4.jar&quot;], :children ()}, com.taoensso/encore {:mvn/version &quot;3.10.1&quot;, :deps/manifest :mvn, :dependents [com.taoensso/sente], :paths [&quot;/home/asus/.m2/repository/com/taoensso/encore/3.10.1/encore-3.10.1.jar&quot;], :children (com.taoensso/truss)}, org.clojure/tools.analyzer.jvm {:mvn/version &quot;1.1.0&quot;, :deps/manifest :mvn, :dependents [org.clojure/core.async], :paths [&quot;/home/asus/.m2/repository/org/clojure/tools.analyzer.jvm/1.1.0/tools.analyzer.jvm-1.1.0.jar&quot;], :children (org.clojure/tools.analyzer org.ow2.asm/asm org.clojure/core.memoize)}, com.googlecode.json-simple/json-simple {:mvn/version &quot;1.1.1&quot;, :exclusions #{junit/junit}, :deps/manifest :mvn, :dependents [org.msgpack/msgpack], :paths [&quot;/home/asus/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar&quot;], :children ()}, com.cognitect/transit-cljs {:mvn/version &quot;0.8.264&quot;, :deps/manifest :mvn, :dependents [com.fulcrologic/fulcro], :paths [&quot;/home/asus/.m2/repository/com/cognitect/transit-cljs/0.8.264/transit-cljs-0.8.264.jar&quot;], :children (com.cognitect/transit-js)}, org.clojure/google-closure-library {:mvn/version &quot;0.0-20201211-3e6c510d&quot;, :deps/manifest :mvn, :dependents [org.clojure/clojurescript], :paths [&quot;/home/asus/.m2/repository/org/clojure/google-closure-library/0.0-20201211-3e6c510d/google-closure-library-0.0-20201211-3e6c510d.jar&quot;], :children (org.clojure/google-closure-library-third-party)}, io.aviso/pretty {:mvn/version &quot;0.1.33&quot;, :deps/manifest :mvn, :dependents [com.taoensso/timbre], :paths [&quot;/home/asus/.m2/repository/io/aviso/pretty/0.1.33/pretty-0.1.33.jar&quot;], :children ()}, org.clojure/clojurescript {:mvn/version &quot;1.10.866&quot;, :deps/manifest :mvn, :dependents [com.fulcrologic/fulcro], :paths [&quot;/home/asus/.m2/repository/org/clojure/clojurescript/1.10.866/clojurescript-1.10.866.jar&quot;], :children (org.clojure/google-closure-library com.google.javascript/closure-compiler-unshaded)}, spec-coerce/spec-coerce {:mvn/version &quot;1.0.0-alpha6&quot;, :deps/manifest :mvn, :dependents [com.wsscode/pathom], :paths [&quot;/home/asus/.m2/repository/spec-coerce/spec-coerce/1.0.0-alpha6/spec-coerce-1.0.0-alpha6.jar&quot;], :children ()}, commons-io/commons-io {:mvn/version &quot;2.10.0&quot;, :deps/manifest :mvn, :dependents [ring/ring-core], :paths [&quot;/home/asus/.m2/repository/commons-io/commons-io/2.10.0/commons-io-2.10.0.jar&quot;], :children ()}, org.clojure/tools.namespace {:mvn/version &quot;1.4.1&quot;, :deps/manifest :mvn, :paths [&quot;/home/asus/.m2/repository/org/clojure/tools.namespace/1.4.1/tools.namespace-1.4.1.jar&quot;], :dependents [], :children (org.clojure/java.classpath org.clojure/tools.reader)}, com.wsscode/spec-inspec {:mvn/version &quot;1.0.0-alpha2&quot;, :deps/manifest :mvn, :dependents [spec-coerce/spec-coerce com.wsscode/pathom], :paths [&quot;/home/asus/.m2/repository/com/wsscode/spec-inspec/1.0.0-alpha2/spec-inspec-1.0.0-alpha2.jar&quot;], :children ()}, com.fasterxml.jackson.core/jackson-core {:mvn/version &quot;2.8.7&quot;, :deps/manifest :mvn, :dependents [com.cognitect/transit-java], :paths [&quot;/home/asus/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.8.7/jackson-core-2.8.7.jar&quot;], :children ()}, org.ow2.asm/asm {:mvn/version &quot;5.2&quot;, :deps/manifest :mvn, :dependents [org.clojure/tools.analyzer.jvm], :paths [&quot;/home/asus/.m2/repository/org/ow2/asm/asm/5.2/asm-5.2.jar&quot;], :children ()}, com.cognitect/transit-js {:mvn/version &quot;0.8.861&quot;, :deps/manifest :mvn, :dependents [com.cognitect/transit-cljs], :paths [&quot;/home/asus/.m2/repository/com/cognitect/transit-js/0.8.861/transit-js-0.8.861.jar&quot;], :children ()}, com.taoensso/truss {:mvn/version &quot;1.6.0&quot;, :deps/manifest :mvn, :dependents [com.taoensso/encore], :paths [&quot;/home/asus/.m2/repository/com/taoensso/truss/1.6.0/truss-1.6.0.jar&quot;], :children ()}, org.clojure/google-closure-library-third-party {:mvn/version &quot;0.0-20201211-3e6c510d&quot;, :deps/manifest :mvn, :dependents [org.clojure/google-closure-library], :paths [&quot;/home/asus/.m2/repository/org/clojure/google-closure-library-third-party/0.0-20201211-3e6c510d/google-closure-library-third-party-0.0-20201211-3e6c510d.jar&quot;], :children ()}, com.fulcrologic/fulcro {:mvn/version &quot;3.5.9&quot;, :deps/manifest :mvn, :paths [&quot;/home/asus/.m2/repository/com/fulcrologic/fulcro/3.5.9/fulcro-3.5.9.jar&quot;], :dependents [], :children (com.fulcrologic/guardrails edn-query-language/eql com.cognitect/transit-cljs org.clojure/clojurescript com.taoensso/sente com.cognitect/transit-clj org.clojure/core.async)}, org.javassist/javassist {:mvn/version &quot;3.18.1-GA&quot;, :deps/manifest :mvn, :dependents [org.msgpack/msgpack], :paths [&quot;/home/asus/.m2/repository/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar&quot;], :children ()}, org.clojure/java.classpath {:mvn/version &quot;1.0.0&quot;, :deps/manifest :mvn, :dependents [org.clojure/tools.namespace], :paths [&quot;/home/asus/.m2/repository/org/clojure/java.classpath/1.0.0/java.classpath-1.0.0.jar&quot;], :children ()}, com.taoensso/sente {:mvn/version &quot;1.16.1&quot;, :deps/manifest :mvn, :dependents [com.fulcrologic/fulcro], :paths [&quot;/home/asus/.m2/repository/com/taoensso/sente/1.16.1/sente-1.16.1.jar&quot;], :children (com.taoensso/encore org.java-websocket/Java-WebSocket)}, org.msgpack/msgpack {:mvn/version &quot;0.6.12&quot;, :deps/manifest :mvn, :dependents [com.cognitect/transit-java], :paths [&quot;/home/asus/.m2/repository/org/msgpack/msgpack/0.6.12/msgpack-0.6.12.jar&quot;], :children (com.googlecode.json-simple/json-simple org.javassist/javassist)}, com.taoensso/timbre {:mvn/version &quot;4.10.0&quot;, :deps/manifest :mvn, :paths [&quot;/home/asus/.m2/repository/com/taoensso/timbre/4.10.0/timbre-4.10.0.jar&quot;], :dependents [], :children (io.aviso/pretty)}, com.cognitect/transit-clj {:mvn/version &quot;1.0.324&quot;, :deps/manifest :mvn, :dependents [com.fulcrologic/fulcro], :paths [&quot;/home/asus/.m2/repository/com/cognitect/transit-clj/1.0.324/transit-clj-1.0.324.jar&quot;], :children (com.cognitect/transit-java)}, crypto-random/crypto-random {:mvn/version &quot;1.2.1&quot;, :deps/manifest :mvn, :dependents [ring/ring-core], :paths [&quot;/home/asus/.m2/repository/crypto-random/crypto-random/1.2.1/crypto-random-1.2.1.jar&quot;], :children (commons-codec/commons-codec)}, ring/ring-codec {:mvn/version &quot;1.1.3&quot;, :deps/manifest :mvn, :dependents [ring/ring-core], :paths [&quot;/home/asus/.m2/repository/ring/ring-codec/1.1.3/ring-codec-1.1.3.jar&quot;], :children ()}, crypto-equality/crypto-equality {:mvn/version &quot;1.0.0&quot;, :deps/manifest :mvn, :dependents [ring/ring-core], :paths [&quot;/home/asus/.m2/repository/crypto-equality/crypto-equality/1.0.0/crypto-equality-1.0.0.jar&quot;], :children ()}, org.java-websocket/Java-WebSocket {:mvn/version &quot;1.5.1&quot;, :deps/manifest :mvn, :dependents [com.taoensso/sente], :paths [&quot;/home/asus/.m2/repository/org/java-websocket/Java-WebSocket/1.5.1/Java-WebSocket-1.5.1.jar&quot;], :children (org.slf4j/slf4j-api)}, org.clojure/tools.reader {:mvn/version &quot;1.3.6&quot;, :deps/manifest :mvn, :dependents [org.clojure/tools.namespace], :paths [&quot;/home/asus/.m2/repository/org/clojure/tools.reader/1.3.6/tools.reader-1.3.6.jar&quot;], :children ()}, org.slf4j/slf4j-api {:mvn/version &quot;1.7.25&quot;, :deps/manifest :mvn, :dependents [org.java-websocket/Java-WebSocket], :paths [&quot;/home/asus/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar&quot;], :children ()}, com.google.javascript/closure-compiler-unshaded {:mvn/version &quot;v20210505&quot;, :deps/manifest :mvn, :dependents [org.clojure/clojurescript], :paths [&quot;/home/asus/.m2/repository/com/google/javascript/closure-compiler-unshaded/v20210505/closure-compiler-unshaded-v20210505.jar&quot;], :children ()}, org.clojure/test.check {:mvn/version &quot;1.1.0&quot;, :deps/manifest :mvn, :dependents [edn-query-language/eql], :paths [&quot;/home/asus/.m2/repository/org/clojure/test.check/1.1.0/test.check-1.1.0.jar&quot;], :children ()}, org.clojure/core.memoize {:mvn/version &quot;1.0.236&quot;, :deps/manifest :mvn, :dependents [org.clojure/tools.analyzer.jvm], :paths [&quot;/home/asus/.m2/repository/org/clojure/core.memoize/1.0.236/core.memoize-1.0.236.jar&quot;], :children (org.clojure/core.cache)}, camel-snake-kebab/camel-snake-kebab {:mvn/version &quot;0.4.0&quot;, :deps/manifest :mvn, :dependents [com.wsscode/pathom], :paths [&quot;/home/asus/.m2/repository/camel-snake-kebab/camel-snake-kebab/0.4.0/camel-snake-kebab-0.4.0.jar&quot;], :children ()}, org.clojure/data.priority-map {:mvn/version &quot;1.0.0&quot;, :deps/manifest :mvn, :dependents [org.clojure/core.cache], :paths [&quot;/home/asus/.m2/repository/org/clojure/data.priority-map/1.0.0/data.priority-map-1.0.0.jar&quot;], :children ()}, ring/ring-core {:mvn/version &quot;1.9.4&quot;, :deps/manifest :mvn, :paths [&quot;/home/asus/.m2/repository/ring/ring-core/1.9.4/ring-core-1.9.4.jar&quot;], :dependents [], :children (commons-fileupload/commons-fileupload commons-io/commons-io crypto-random/crypto-random ring/ring-codec crypto-equality/crypto-equality)}, org.clojure/core.cache {:mvn/version &quot;1.0.207&quot;, :deps/manifest :mvn, :dependents [org.clojure/core.memoize], :paths [&quot;/home/asus/.m2/repository/org/clojure/core.cache/1.0.207/core.cache-1.0.207.jar&quot;], :children (org.clojure/data.priority-map)}, org.clojure/core.async {:mvn/version &quot;1.3.610&quot;, :deps/manifest :mvn, :dependents [com.fulcrologic/fulcro com.taoensso/sente], :paths [&quot;/home/asus/.m2/repository/org/clojure/core.async/1.3.610/core.async-1.3.610.jar&quot;], :children (org.clojure/tools.analyzer.jvm)}, javax.xml.bind/jaxb-api {:mvn/version &quot;2.3.0&quot;, :deps/manifest :mvn, :dependents [com.cognitect/transit-java], :paths [&quot;/home/asus/.m2/repository/javax/xml/bind/jaxb-api/2.3.0/jaxb-api-2.3.0.jar&quot;], :children ()}, http-kit/http-kit {:mvn/version &quot;2.5.3&quot;, :deps/manifest :mvn, :paths [&quot;/home/asus/.m2/repository/http-kit/http-kit/2.5.3/http-kit-2.5.3.jar&quot;], :dependents [], :children ()}}, :test-paths [&quot;/home/asus/carreraprogrammer/DATAICO/fulcro-to-do/test&quot;]}" />
+              <option name="hash" value="f4858d223df39840fc088ff37fc91696" />
+            </ModuleDetails>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Clojure Namespace" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2M9fhY7W550MeMjlwA6fVDVvKkx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;IDE SDK&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/asus/carreraprogrammer/DATAICO/fulcro-to-do/deps.edn&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;DepsSettings&quot;
+  }
+}</component>
+  <component name="ReplState" timestamp="1677186684606">{:repl-history {:ide [], :local [], :remote []}}</component>
+  <component name="RunManager">
+    <configuration default="true" type="Babashka" factoryName="BabashkaLocalRepl" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="bbPath" value="" />
+      <setting name="parameters" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <setting name="workingDir" value="" />
+      <setting name="focusEditor" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed (1)" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false" nameIsGenerated="true">
+      <module name="fulcro-to-do" />
+      <setting name="displayName" value="Unnamed (1)" />
+      <setting name="host" value="localhost" />
+      <setting name="port" value="3000" />
+      <setting name="replType" value="NREPL" />
+      <setting name="configType" value="SPECIFY" />
+      <setting name="replPortFileType" value="STANDARD" />
+      <setting name="customPortFile" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <setting name="focusEditor" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <setting name="focusEditor" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="displayName" value="" />
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="SOCKET" />
+      <setting name="configType" value="SPECIFY" />
+      <setting name="replPortFileType" value="STANDARD" />
+      <setting name="customPortFile" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <setting name="focusEditor" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55c8a6af-78cb-45c6-8a08-69cd50a13fcd" name="Changes" comment="" />
+      <created>1677184839153</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677184839153</updated>
+    </task>
+    <servers />
+  </component>
+</project>
