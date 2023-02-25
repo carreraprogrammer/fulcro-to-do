@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Deps: org.clojure/core.memoize:1.0.236">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/clojure/core.memoize/1.0.236/core.memoize-1.0.236.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

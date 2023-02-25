@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Deps: com.datomic/s3-access-keys:0.1.6">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/datomic/s3-access-keys/0.1.6/s3-access-keys-0.1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
