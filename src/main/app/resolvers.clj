@@ -3,13 +3,6 @@
     [com.wsscode.pathom.core :as p]
     [com.wsscode.pathom.connect :as pc]))
 
-(def client (d/client {:server-type :dev-local
-                       :system "dev"
-                       :storage-dir "/home/asus/DATOMIC/storage"
-                       }))
-
-(def conn (d/connect client {:db-name "todo-app"}))
-
 (def todos-table
   (atom
    {}))

@@ -134,3 +134,21 @@
 ; ["TODOS" 5 "watch series" true]
 ; ["TODOS" 2 "Walk the dog" true]
 ; ["TODOS" 1 "do the laundry" true]]
+
+(defn retract-todo!
+  "Retract all the fields based on the :movie/id"
+  [conn id]
+  (try
+    (d/transact conn {:tx-data
+                      [[:db/retract [:todo/id id] :todo/id ]
+                       [:db/retract[:todo/id id] :todo/text]
+                       [:db/retract [:todo/id id] :todo/done]
+                      ]})
+    (catch Exception e "Nothing was deleted")))
+
+(retract-todo! conn 5)
+
+;; [["TODOS" 4 "clean my bedroom" true]
+; ["TODOS" 0 "make website" true]
+; ["TODOS" 2 "Walk the dog" true]
+; ["TODOS" 1 "do the laundry" true]]
