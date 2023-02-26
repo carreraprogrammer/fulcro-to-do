@@ -86,7 +86,7 @@
 
 (upsert-todo! conn {:todo-id 0
                     :text "make website"
-                    :done true
+                    :done false
                     :list-id 0
                     :title "TODOS"
                     })
@@ -100,14 +100,14 @@
 
 (upsert-todo! conn {:todo-id 2
                     :text "Walk the dog"
-                    :done true
+                    :done false
                     :list-id 0
                     :title "TODOS"
                     })
 
 (upsert-todo! conn {:todo-id 4
                     :text "clean my bedroom"
-                    :done true
+                    :done false
                     :list-id 0
                     :title "TODOS"
                     })
@@ -152,3 +152,14 @@
 ; ["TODOS" 0 "make website" true]
 ; ["TODOS" 2 "Walk the dog" true]
 ; ["TODOS" 1 "do the laundry" true]]
+
+(d/q '[:find ?list-title ?todo-id ?text
+       :where
+       [?e :todo/text ?text]
+       [?e :todo/id ?todo-id]
+       [?e :todo/done false]
+       [_ :list/title ?list-title]
+       ]
+     (d/db conn))
+
+; => => [["TODOS" 4 "clean my bedroom"] ["TODOS" 2 "Walk the dog"] ["TODOS" 0 "make website"]]
