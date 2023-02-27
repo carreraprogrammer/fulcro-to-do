@@ -1,7 +1,6 @@
 (ns app.mutations
   (:require
     [com.fulcrologic.fulcro.mutations :as m :refer [defmutation]]
-    [com.fulcrologic.fulcro.algorithms.merge :as merge]
     ))
 
 (defmutation delete-todo
@@ -29,6 +28,7 @@
                                       todo))
                                   todos))))
   (remote [env] true))
+
 (defmutation clear-done
   "Mutation: Clear all the completed tasks from the list with :list/id and update the :todo/id of the remaining tasks"
   [{list-id :list/id}]
@@ -47,5 +47,17 @@
     todo-text :todo/text}]
   (action [{:keys [state]}]
           (swap! state update-in [:list/id list-id :list/todos]
-                 (fn [todos] (concat todos [{:todo/id (count todos) :todo/text todo-text :todo/done false}]))))
+                 (fn [todos] (concat todos [{:todo/id (count todos) :todo/text todo-text :todo/done false :todo/edit? false}]))))
   (remote [env] true))
+
+(defmutation toggle-todo-edit
+  "Mutation: Toggle the `edit?` state of the task with `:todo/id` in the list with `:list/id`"
+  [{list-id :list/id
+    todo-id :todo/id}]
+  (action [{:keys [state]}]
+          (swap! state update-in [:list/id list-id :list/todos]
+                 (fn [todos] (map (fn [todo]
+                                    (if (= (:todo/id todo) todo-id)
+                                      (merge todo {:todo/edit? (not (:todo/edit? todo))})
+                                      todo))
+                                  todos)))))

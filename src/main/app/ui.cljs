@@ -6,15 +6,22 @@
     [com.fulcrologic.fulcro.dom :as dom]))
 (def input-value (atom ""))
 
-(defsc Todo [this {:todo/keys [id text done] :as props} {:keys [onDelete toggleDone]}]
-  {:query [:todo/id :todo/text :todo/done]}
+(defsc Todo [this {:todo/keys [id text done edit?] :as props} {:keys [onDelete toggleDone toggleEdit]}]
+  {:query [:todo/id :todo/text :todo/done :todo/edit?]}
   (dom/tr
     (dom/td :.td-id (str id))
-    (dom/td :.td-todo
+    (if edit?
+     (dom/td :.td-todo
+             (dom/div nil
+                      (dom/input :.edit-text {:autoFocus true :type "text" :value text})
+                     ))
+     (dom/td :.td-todo {:onClick #(toggleEdit id) }
       (dom/input {:type "checkbox" :checked done :onChange #(toggleDone id)})
       (str "  " text)
-     )
-    (dom/td :.td-menu (dom/div :.menu (dom/button :.edit-btn "E") (dom/button :.x-btn {:onClick #(onDelete id)} (dom/div :.x-one) (dom/div :.x-two)) ))))
+     ))
+    (dom/td :.td-menu (dom/div :.menu {}
+                               (dom/button :.edit-btn {:onClick #(toggleEdit id) } "Edit")
+                               (dom/button :.x-btn {:onClick #(onDelete id)} (dom/div :.x-one) (dom/div :.x-two)) ))))
 
 (def ui-todo (comp/factory Todo {:keyfn :todo/id}))
 
@@ -24,7 +31,8 @@
   (let [delete-todo (fn [todo-id] (comp/transact! this [(api/delete-todo {:list/id id :todo/id todo-id})]))
         toggle-todo-done (fn [todo-id] (comp/transact! this [(api/toggle-todo-done {:list/id id :todo/id todo-id})]))
         clear-done (fn [id] (comp/transact! this [(api/clear-done {:list/id id})]))
-        add-todo (fn [list-id text] (comp/transact! this [(api/add-todo {:list/id list-id :todo/text text})]))]
+        add-todo (fn [list-id text] (comp/transact! this [(api/add-todo {:list/id list-id :todo/text text})]))
+        toggle-todo-edit (fn [todo-id] (comp/transact! this [(api/toggle-todo-edit {:list/id id :todo/id todo-id})]))]
     (dom/div :.todos-container
              (dom/h2 :.todos-title title)
              (dom/form :.input-form
@@ -41,7 +49,7 @@
                    (dom/th "Todo")
                    (dom/th "Options")))
                (dom/tbody
-                 (map #(ui-todo (comp/computed % {:onDelete delete-todo :toggleDone toggle-todo-done})) todos))))
+                 (map #(ui-todo (comp/computed % {:onDelete delete-todo :toggleDone toggle-todo-done :toggleEdit toggle-todo-edit})) todos))))
              (when (> (count todos) 0)
               (dom/button :.clear-btn {:onClick #(clear-done id)} "Clear Completed" )))))
 

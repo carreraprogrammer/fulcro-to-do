@@ -119,12 +119,12 @@
                     :title "TODOS"
                     })
 
-(d/q '[:find ?list-title ?todo-id ?text ?done
+(d/q '[:find ?todo-id ?text ?done
+       :keys todo/id todo/text todo/done
        :where
        [?e :todo/text ?text]
        [?e :todo/id ?todo-id]
        [?e :todo/done ?done]
-       [_ :list/title ?list-title]
      ]
      (d/db conn))
 

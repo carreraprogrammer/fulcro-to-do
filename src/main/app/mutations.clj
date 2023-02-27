@@ -1,8 +1,7 @@
 (ns app.mutations
   (:require
     [app.resolvers :refer [list-table]]
-    [com.wsscode.pathom.connect :as pc]
-    [taoensso.timbre :as log]))
+    [com.wsscode.pathom.connect :as pc]))
 
 (pc/defmutation delete-todo [env {list-id :list/id
                                   todo-id :todo/id}]
@@ -45,9 +44,9 @@
                 {::pc/sym `add-todo}
                 (let [todos (get-in @list-table [list-id :list/todos])
                       id (count todos)
-                      todo {:todo/id id :todo/text todo-text :todo/done false}]
+                      todo {:todo/id id :todo/text todo-text :todo/done false :todo/edit? false}]
                   (swap! list-table update-in [list-id :list/todos] conj todo)
-                  {:todo/id id :todo/text todo-text :todo/done false}))
+                  {:todo/id id :todo/text todo-text :todo/done false :todo/edit? false}))
 
 
 
