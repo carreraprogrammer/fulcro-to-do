@@ -38,6 +38,10 @@
     :db/ident :todo/done
     :db/valueType {:db/ident :db.type/boolean}
     :db/cardinality {:db/ident :db.cardinality/one}}
+   {:db/id ":todo/edit?"
+    :db/ident :todo/edit?
+    :db/valueType {:db/ident :db.type/boolean}
+    :db/cardinality {:db/ident :db.cardinality/one}} ; Nueva línea
    {:db/id ":list/todos+id"
     :db/ident :list/todos+id
     :db/valueType {:db/ident :db.type/tuple}
@@ -77,7 +81,8 @@
   [conn {:keys [todo-id text done list-id title]}]
   (d/transact conn {:tx-data [[:db/add "temporary-new-db-id" :todo/id todo-id]
                               [:db/add "temporary-new-db-id" :todo/text text]
-                              [:db/add "temporary-new-db-id" :todo/done done]
+                              [:db/add "temporary-new-db-id" :todo/done false]
+                              [:db/add "temporary-new-db-id" :todo/edit? false]
                               [:db/add 0 :list/todos+id [list-id todo-id]]
                               [:db/add 0 :list/id+title [list-id title]]
                               ]}))
@@ -86,55 +91,50 @@
 
 (upsert-todo! conn {:todo-id 0
                     :text "make website"
-                    :done false
                     :list-id 0
                     :title "TODOS"
                     })
 
 (upsert-todo! conn {:todo-id 1
                     :text "do the laundry"
-                    :done true
                     :list-id 0
                     :title "TODOS"
                     })
 
 (upsert-todo! conn {:todo-id 2
                     :text "Walk the dog"
-                    :done false
                     :list-id 0
                     :title "TODOS"
                     })
 
 (upsert-todo! conn {:todo-id 4
                     :text "clean my bedroom"
-                    :done false
                     :list-id 0
                     :title "TODOS"
                     })
 
 (upsert-todo! conn {:todo-id 5
                     :text "watch series"
-                    :done true
                     :list-id 0
                     :title "TODOS"
                     })
 
-(d/q '[:find ?todo-id ?text ?done
-       :keys todo/id todo/text todo/done
+(d/q '[:find ?todo-id ?text ?done ?edit
+       :keys todo/id todo/text todo/done todo/edit
        :where
        [?e :todo/text ?text]
        [?e :todo/id ?todo-id]
        [?e :todo/done ?done]
+       [?e :todo/edit? ?edit]
      ]
      (d/db conn))
 
-;=>=>
-;[["TODOS" 4 "clean my bedroom" true]
-; ["TODOS" 0 "make website" true]
-; ["TODOS" 5 "watch series" true]
-; ["TODOS" 2 "Walk the dog" true]
-; ["TODOS" 1 "do the laundry" true]]
-
+;=>
+;[#:todo{:id 4, :text "clean my bedroom", :done false, :edit false}
+; #:todo{:id 0, :text "make website", :done false, :edit false}
+; #:todo{:id 1, :text "do the laundry", :done false, :edit false}
+; #:todo{:id 2, :text "Walk the dog", :done false, :edit false}
+; #:todo{:id 5, :text "watch series", :done false, :edit false}]
 (defn retract-todo!
   "Retract all the fields based on the :movie/id"
   [conn id]
@@ -163,3 +163,5 @@
      (d/db conn))
 
 ; => => [["TODOS" 4 "clean my bedroom"] ["TODOS" 2 "Walk the dog"] ["TODOS" 0 "make website"]]
+
+

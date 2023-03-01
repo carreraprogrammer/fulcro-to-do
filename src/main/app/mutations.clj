@@ -49,5 +49,17 @@
                   {:todo/id id :todo/text todo-text :todo/done false :todo/edit? false}))
 
 
+(pc/defmutation edit-todo [env {list-id :list/id
+                                todo-id :todo/id
+                                new-text :todo/text}]
+                {::pc/sym `edit-todo}
+                (letfn [(update-text [todos]
+                          (map (fn [todo]
+                                 (if (= (:todo/id todo) todo-id)
+                                   (merge todo {:todo/text new-text})
+                                   todo))
+                               todos))]
+                  (swap! list-table update-in [list-id :list/todos] update-text)
+                  {:edited-todo-id todo-id}))
 
-(def mutations [add-todo delete-todo toggle-todo-done clear-done])
+(def mutations [add-todo delete-todo toggle-todo-done clear-done edit-todo])

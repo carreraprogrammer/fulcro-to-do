@@ -61,3 +61,17 @@
                                       (merge todo {:todo/edit? (not (:todo/edit? todo))})
                                       todo))
                                   todos)))))
+
+(defmutation edit-todo
+  "Mutation: Update the text of the task with :todo/id in the list with :list/id"
+  [{list-id :list/id
+    todo-id :todo/id
+    new-text :todo/text}]
+  (action [{:keys [state]}]
+          (swap! state update-in [:list/id list-id :list/todos]
+                 (fn [todos] (map (fn [todo]
+                                    (if (= (:todo/id todo) todo-id)
+                                      (merge todo {:todo/text new-text})
+                                      todo))
+                                  todos))))
+  (remote [env] true))
