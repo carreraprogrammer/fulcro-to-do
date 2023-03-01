@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Deps: com.cognitect/s3-creds:1.0.27">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/cognitect/s3-creds/1.0.27/s3-creds-1.0.27.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

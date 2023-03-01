@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Deps: com.datomic/client:1.0.126">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/datomic/client/1.0.126/client-1.0.126.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
