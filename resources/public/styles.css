@@ -51,7 +51,7 @@ body {
 }
 
 .todos-title {
-  font-size: 36px;
+  font-size: 5rem;
   margin-top: 20px;
   width: 100%;
   display: flex;
@@ -121,11 +121,10 @@ td {
   border: 1px solid #ddd;
   height: 35px;
   text-align: left;
-  padding-left: 10px;
 }
 
 th {
-  width: 70%;
+  width: 80%;
   border: 1px solid #ddd;
   font-size: 15px;
   text-align: center;
@@ -144,7 +143,7 @@ th {
 }
 
 .th-menu {
-  width: 20%;
+  width: 10%;
 }
 
 .td-todo {
@@ -190,8 +189,8 @@ th {
 }
 
 .x-btn {
-  width: 20%;
-  height: 40%;
+  width: 50%;
+  height: 70%;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -201,8 +200,8 @@ th {
 }
 
 .menu {
-  height: 50px;
-  width: 130px;
+  height: 100%;
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -210,7 +209,7 @@ th {
   transition: all 0.5s ease-in-out;
 }
 
-.edit-btn {
+.fa-regular.fa-pen-to-square.edit-btn {
   display: none;
 }
 
@@ -311,6 +310,10 @@ th {
     transform: translateY(-3px) rotate(-45deg);
   }
 
+  .edit-btn {
+    display: none;
+  }
+
   .menu:hover>.edit-btn {
     display: flex;
     width: 40%;
@@ -324,15 +327,15 @@ th {
   }
 
   .edit-btn:hover {
-    transform: scale(1.3);
-    color: rgb(42, 175, 1);
+    transform: scale(1.2);
+    color: rgb(255, 123, 0);
   }
 
 }
 
 @media only screen and (max-width: 600px) {
   .todos-title {
-    font-size: 24px;
+    font-size: 36px;
   }
 
   table {

@@ -27,7 +27,7 @@
                 (dom/div {:onClick #(toggleEdit id) } text))
                 ))
       (dom/td :.td-menu (dom/div :.menu {}
-                                 (dom/button :.edit-btn {:onClick #(toggleEdit id) } "Edit")
+                                 (dom/i {:class "fa-regular fa-pen-to-square edit-btn" :onClick #(toggleEdit id) })
                                  (dom/button :.x-btn {:onClick #(onDelete id)} (dom/div :.x-one) (dom/div :.x-two)) )))))
 
 (def ui-todo (comp/factory Todo {:keyfn :todo/id}))
