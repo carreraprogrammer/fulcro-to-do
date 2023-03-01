@@ -5,58 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55c8a6af-78cb-45c6-8a08-69cd50a13fcd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__binaryage_devtools_1_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__cider_cider_nrepl_0_27_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__cider_piggieback_0_5_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__com_bhauman_cljs_test_display_0_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__com_ibm_icu_icu4j_68_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__expound_0_8_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__fipp_0_6_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__hiccup_1_0_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__io_methvin_directory_watcher_0_15_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__io_undertow_undertow_core_2_2_4_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__net_java_dev_jna_jna_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__nrepl_0_8_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_clojure_core_rrb_vector_0_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_clojure_tools_cli_1_0_206.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_graalvm_js_js_21_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_graalvm_js_js_scriptengine_21_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_graalvm_regex_regex_21_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_graalvm_sdk_graal_sdk_21_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_graalvm_truffle_truffle_api_21_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_jboss_logging_jboss_logging_3_4_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_jboss_threads_jboss_threads_3_1_0_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_jboss_xnio_xnio_api_3_8_0_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_jboss_xnio_xnio_nio_3_8_0_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_wildfly_client_wildfly_client_config_1_0_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_wildfly_common_wildfly_common_1_5_2_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__thheller_shadow_client_1_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__thheller_shadow_cljs_2_16_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__thheller_shadow_cljsjs_0_0_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__thheller_shadow_undertow_0_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Deps__thheller_shadow_util_0_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Datomic/db/queries/todos-list.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/clojure-deps.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/clojure-deps.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Deps__com_cognitect_transit_cljs_0_8_264.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Deps__com_cognitect_transit_cljs_0_8_269.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Deps__com_cognitect_transit_js_0_8_861.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Deps__com_cognitect_transit_js_0_8_874.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Deps__com_google_javascript_closure_compiler_unshaded_v20210505.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Deps__com_google_javascript_closure_compiler_unshaded_v20211006.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Deps__expound_0_8_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Deps__org_clojure_clojurescript_1_10_866.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_clojure_clojurescript_1_10_914.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Deps__org_clojure_data_json_0_2_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_clojure_data_json_2_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Deps__org_clojure_google_closure_library_0_0_20201211_3e6c510d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_clojure_google_closure_library_0_0_20211011_0726fdeb.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Deps__org_clojure_google_closure_library_third_party_0_0_20201211_3e6c510d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_clojure_google_closure_library_third_party_0_0_20211011_0726fdeb.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Deps__org_slf4j_slf4j_api_1_7_25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Deps__org_slf4j_slf4j_api_1_7_30.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.nrepl-port" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Datomic/.nrepl-port" beforeDir="false" afterPath="$PROJECT_DIR$/Datomic/.nrepl-port" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Datomic/Datomic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Datomic/Datomic.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Datomic/db/todos_db/schema.clj" beforeDir="false" afterPath="$PROJECT_DIR$/Datomic/db/todos_db/schema.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fulcro-to-do.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fulcro-to-do.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/public/js/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/public/js/main/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/public/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/public/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/app/mutations.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/app/mutations.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/app/mutations.cljs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/app/mutations.cljs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/app/ui.cljs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/app/ui.cljs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +91,7 @@
       <recent name="$PROJECT_DIR$/Datomic/resources" />
     </key>
   </component>
-  <component name="ReplState" timestamp="1677642618057">{:repl-history {:ide [], :local [{:command &quot;(def client (d/client {:server-type :dev-local\n                       :system \&quot;dev\&quot;\n                       :storage-dir \&quot;/home/asus/DATOMIC/storage\&quot;}))&quot;, :offset 151, :ns &quot;app.resolvers&quot;} {:command &quot;(d/list-databases client {})&quot;, :offset 28, :ns &quot;app.resolvers&quot;} {:command &quot;(def conn (d/connect client {:db-name \&quot;todo-app\&quot;}))&quot;, :offset 51, :ns &quot;app.resolvers&quot;}], :remote [{:command &quot;(def conn (d/connect client {:db-name \&quot;todo-app\&quot;}))&quot;, :offset 51, :ns &quot;todos-db.app-db&quot;} {:command &quot;(def todo-schema\n  [{:db/ident       :list/id\n    :db/valueType   :db.type/long\n    :db/cardinality :db.cardinality/one\n    :db/unique      :db.unique/identity}\n\n   {:db/ident       :list/title\n    :db/valueType   :db.type/string\n    :db/cardinality :db.cardinality/one}\n\n   {:db/ident       :list-todos\n    :db/valueType   :db.type/ref\n    :db/cardinality :db.cardinality/many\n    :db/doc         \&quot;The list of todos associated with this list\&quot;}\n\n   {:db/ident       :todo/id\n    :db/valueType   :db.type/string\n    :db/cardinality :db.cardinality/one}\n\n   {:db/ident       :todo/text\n    :db/valueType   :db.type/string\n    :db/cardinality :db.cardinality/one}\n\n   {:db/ident       :todo/done\n    :db/valueType   :db.type/boolean\n    :db/cardinality :db.cardinality/one\n    :db/doc         \&quot;Whether the todo is done or not\&quot;}\n\n   {:db/ident       :todo-list\n    :db/valueType   :db.type/ref\n    :db/cardinality :db.cardinality/many\n    :db/doc         \&quot;The lists that this todo belongs to\&quot;}])&quot;, :offset 991, :ns &quot;todos-db.app-db&quot;} {:command &quot;(d/transact conn {:tx-data todo-schema})&quot;, :offset 40, :ns &quot;todos-db.app-db&quot;} {:command &quot;(d/list-databases client {})&quot;, :offset 28, :ns &quot;todos-db.app-db&quot;} {:command &quot;(d/delete-database client {:db-name \&quot;todo-app\&quot;})&quot;, :offset 48, :ns &quot;todos-db.app-db&quot;} {:command &quot;(def client (d/client {:server-type :dev-local\n                       :system \&quot;dev\&quot;\n                       :storage-dir \&quot;/home/asus/DATOMIC/storage\&quot;\n                       }))&quot;, :offset 175, :ns &quot;todos-db.app-db&quot;} {:command &quot;(d/create-database client {:db-name \&quot;todo-app\&quot;})&quot;, :offset 48, :ns &quot;todos-db.app-db&quot;}]}}</component>
+  <component name="ReplState" timestamp="1677643673804">{:repl-history {:ide [], :local [{:command &quot;(def client (d/client {:server-type :dev-local\n                       :system \&quot;dev\&quot;\n                       :storage-dir \&quot;/home/asus/DATOMIC/storage\&quot;}))&quot;, :offset 151, :ns &quot;app.resolvers&quot;} {:command &quot;(d/list-databases client {})&quot;, :offset 28, :ns &quot;app.resolvers&quot;} {:command &quot;(def conn (d/connect client {:db-name \&quot;todo-app\&quot;}))&quot;, :offset 51, :ns &quot;app.resolvers&quot;}], :remote [{:command &quot;(def conn (d/connect client {:db-name \&quot;todo-app\&quot;}))&quot;, :offset 51, :ns &quot;todos-db.app-db&quot;} {:command &quot;(def todo-schema\n  [{:db/ident       :list/id\n    :db/valueType   :db.type/long\n    :db/cardinality :db.cardinality/one\n    :db/unique      :db.unique/identity}\n\n   {:db/ident       :list/title\n    :db/valueType   :db.type/string\n    :db/cardinality :db.cardinality/one}\n\n   {:db/ident       :list-todos\n    :db/valueType   :db.type/ref\n    :db/cardinality :db.cardinality/many\n    :db/doc         \&quot;The list of todos associated with this list\&quot;}\n\n   {:db/ident       :todo/id\n    :db/valueType   :db.type/string\n    :db/cardinality :db.cardinality/one}\n\n   {:db/ident       :todo/text\n    :db/valueType   :db.type/string\n    :db/cardinality :db.cardinality/one}\n\n   {:db/ident       :todo/done\n    :db/valueType   :db.type/boolean\n    :db/cardinality :db.cardinality/one\n    :db/doc         \&quot;Whether the todo is done or not\&quot;}\n\n   {:db/ident       :todo-list\n    :db/valueType   :db.type/ref\n    :db/cardinality :db.cardinality/many\n    :db/doc         \&quot;The lists that this todo belongs to\&quot;}])&quot;, :offset 991, :ns &quot;todos-db.app-db&quot;} {:command &quot;(d/transact conn {:tx-data todo-schema})&quot;, :offset 40, :ns &quot;todos-db.app-db&quot;} {:command &quot;(d/list-databases client {})&quot;, :offset 28, :ns &quot;todos-db.app-db&quot;} {:command &quot;(d/delete-database client {:db-name \&quot;todo-app\&quot;})&quot;, :offset 48, :ns &quot;todos-db.app-db&quot;} {:command &quot;(def client (d/client {:server-type :dev-local\n                       :system \&quot;dev\&quot;\n                       :storage-dir \&quot;/home/asus/DATOMIC/storage\&quot;\n                       }))&quot;, :offset 175, :ns &quot;todos-db.app-db&quot;} {:command &quot;(d/create-database client {:db-name \&quot;todo-app\&quot;})&quot;, :offset 48, :ns &quot;todos-db.app-db&quot;}]}}</component>
   <component name="RunManager" selected="Clojure REPL.server">
     <configuration default="true" type="Babashka" factoryName="BabashkaLocalRepl" activateToolWindowBeforeRun="false">
       <setting name="displayName" value="" />
