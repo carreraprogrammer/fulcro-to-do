@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Deps: thheller/shadow-undertow:0.2.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/thheller/shadow-undertow/0.2.0/shadow-undertow-0.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -2,5 +2,23 @@
 <project version="4">
   <component name="DepsProjectSettings">
     <option name="cljConfigPath" value="" />
+    <option name="enabledAliases">
+      <set>
+        <option value="dev" />
+      </set>
+    </option>
+    <option name="toolAliases">
+      <set>
+        <option value="dev" />
+      </set>
+    </option>
+  </component>
+  <component name="DepsProjectsManager">
+    <option name="projectFiles">
+      <set>
+        <option value="file://$PROJECT_DIR$/Datomic/deps.edn" />
+        <option value="file://$PROJECT_DIR$/deps.edn" />
+      </set>
+    </option>
   </component>
 </project>
